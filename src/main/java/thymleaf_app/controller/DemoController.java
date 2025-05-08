@@ -1,9 +1,11 @@
 package thymleaf_app.controller;
 
 
+import ch.qos.logback.core.model.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import thymleaf.Model;
+
+import java.time.LocalDateTime;
 
 @Controller
 public class DemoController {
@@ -12,7 +14,7 @@ public class DemoController {
     @GetMapping("/hello")
     public String sayHello(Model theModel) {
 
-        theModel.addAttribute("theDate", java.time.LocalDateTime.now());
+        //theModel.addText(attributeName: "theDate", LocalDateTime.now());
 
         return "helloworld";
     }
